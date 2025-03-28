@@ -1,3 +1,4 @@
+#Dispone el formato de la tabla y la imprime
 def show_table(score_dict):
     print("{:<10} {:<8} {:<14} {:<10} {:<10} {:<9}".format(
     "Jugador", "Kills", "Asistencias", "Muertes", "MPVs", "Puntos")
@@ -8,6 +9,7 @@ def show_table(score_dict):
         score_dict[player]["deaths"], score_dict[player]["mvps"],
         score_dict[player]["score"]
         ))
+#Actualiza el diccionario de puntuaciones con los datos de un diccionario ronda ("jugador": {datos})
 def process_round(score_dict, round):
     max_score = 0
     mvps_list = []
@@ -27,6 +29,7 @@ def process_round(score_dict, round):
     for player in mvps_list:
         score_dict[player]["mvps"] += 1
     return score_dict
+#Ordena el diccionario de puntos según los puntos, de manera decreciente
 def sort_dict_by_score(score_dict):
     sorted_dict = {}
     def player_score(player):
@@ -36,6 +39,7 @@ def sort_dict_by_score(score_dict):
     for player in player_list:
         sorted_dict[player] = score_dict[player]
     return sorted_dict
+#Imprime los resultados ronda a ronda, que se deben pasar como una lista
 def print_game(score_dict, rounds):
     for round_index in range(len(rounds)):
         score_dict = process_round(score_dict, rounds[round_index])
