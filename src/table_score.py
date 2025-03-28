@@ -4,7 +4,7 @@ def show_table(score_dict):
     "Jugador", "Kills", "Asistencias", "Muertes", "MPVs", "Puntos")
     )
     for player in score_dict:
-        print("{:<10} {:<8} {:<14} {:<10} {:<10} {:<9}".format(
+        print("{:<10} {:<8} {:<14} {:<10} {:<7} {:<9}".format(
         player, score_dict[player]["kills"], score_dict[player]["assists"],
         score_dict[player]["deaths"], score_dict[player]["mvps"],
         score_dict[player]["score"]
